@@ -33,12 +33,72 @@
             margin-bottom: 20px;
             object-fit: cover;
             border: 5px solid #ffd700; /* Gold border */
+            opacity: 0; /* Start with logo hidden */
+            animation: fadeInZoom 2s forwards, flipAndShine 5s infinite; /* Apply both animations */
+        }
+
+        /* Fade in and zoom animation */
+        @keyframes fadeInZoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.5); /* Start with smaller size */
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1); /* End with original size */
+            }
+        }
+
+        /* Flip and Shine animation */
+        @keyframes flipAndShine {
+            0% {
+                transform: rotateY(0deg); /* Initial state */
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0); /* No shine */
+            }
+            50% {
+                transform: rotateY(180deg); /* Flip halfway */
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.7); /* Shine effect */
+            }
+            100% {
+                transform: rotateY(360deg); /* Full flip */
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0); /* End shine */
+            }
         }
 
         h1 {
             font-size: 28px;
             color: #ffd700; /* Gold color */
             margin: 10px 0;
+            opacity: 0;
+            animation: fadeInText 2s forwards, textShine 5s infinite; /* Apply both animations */
+        }
+
+        /* Fade-in text animation */
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px); /* Text starts above */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* Text ends in original position */
+            }
+        }
+
+        /* Shine effect for text */
+        @keyframes textShine {
+            0% {
+                color: #ffd700;
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0);
+            }
+            50% {
+                color: #fff;
+                text-shadow: 0 0 30px rgba(255, 215, 0, 1); /* Shine effect on text */
+            }
+            100% {
+                color: #ffd700;
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0);
+            }
         }
 
         .contact-details {
@@ -82,7 +142,7 @@
     <p class="contact-details">
         <strong>Phone:</strong> <a href="tel:+918466001818">+91 8466001818</a><br>
         <strong>Email:</strong> <a href="mailto:aahladaevents@gmail.com">aahladaevents@gmail.com</a><br>
-	<strong>Instagram: </strong> <a href="https://www.instagram.com/aahlada_events/profilecard/?igsh=MThlZHZvZHl4d283dg==">Aahlada_Events</a><br>
+        <strong>Instagram: </strong> <a href="https://www.instagram.com/aahlada_events/profilecard/?igsh=MThlZHZvZHl4d283dg==">Aahlada_Events</a>
     </p>
     <a href="https://wa.me/918466001818" class="ecard-button" target="_blank">Chat on WhatsApp</a>
 </div>
